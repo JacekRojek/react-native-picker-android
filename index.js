@@ -148,7 +148,7 @@ export default class PickerAndroid extends Component{
 	}
 
 	_handlePanResponderRelease(evt, gestureState){
-		let middleHeight = this.middleHeight;
+		let middleHeight = this.middleHeight || 0;
 		this.index = middleHeight % 40 >= 20 ? Math.ceil(middleHeight / 40) : Math.floor(middleHeight / 40);
 		this._move(0);
 		this._onValueChange();
